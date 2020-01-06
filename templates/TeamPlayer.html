@@ -1,0 +1,15 @@
+{% extends 'Base.html' %}
+
+{% block title %}TEAMPLAYER{% endblock %}
+
+{% block content %}
+
+<div>
+    {% for instance in items %}
+        <h2>{{ instance.tname }}</h2>
+        {% for player in instance.player_set.all %}
+        <h4>{{ player.pname }}</h4>
+        {% endfor %}
+    {% endfor %}
+</div>
+{% endblock %}
